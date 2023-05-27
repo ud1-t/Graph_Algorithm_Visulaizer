@@ -1,0 +1,124 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e0e0e0 !important;
+}
+
+.board {
+  width: 40vw;
+  height: 40vw;
+  background-color: #ffffff;
+  border-radius: 4px;
+  margin: 0 auto;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.unit {
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 0.1px outset #2F6CF4;
+}
+.unit:hover {
+  transform: scale(1.1);
+  transition: 200ms;
+}
+
+.restore {
+  background: #ffffff;
+}
+
+.target {
+  background: #2F6CF4;
+}
+
+.wall {
+  background: #000000;
+}
+
+.screen {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.animate {
+  animation: appear 1.4s;
+  background-color: #f4fd9e;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0.5;
+    transform: scale(0);
+    border-radius: 50%;
+  }
+  30% {
+    opacity: 0.75;
+    background-color: #ffeb35;
+  }
+  100% {
+    opacity: 1;
+    background-color: #00ff95;
+    transform: scale(1);
+    border-radius: 0px;
+  }
+}
+.path {
+  background: #ff9393;
+}
+
+.control {
+  width: 40vw;
+  height: 40vw;
+  border-radius: 4px;
+  border-color: #000000;
+  background: #ffffff;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+
+.screen {
+  width: 38vw;
+  height: 38vw;
+  border-radius: 4px;
+}
+
+.title {
+  background: #c1c1c1;
+  border: 1px solid #111111;
+  border-radius: 4px;
+}
+
+.navbar {
+  background-color: #c1c1c1;
+  border: 1px solid #111111;
+  border-radius: 4px;
+  margin: 3px 3px 3px;
+}
+
+@media screen and (max-width: 992px) {
+  .board, .control {
+    width: 75vw;
+    height: 75vw;
+    margin: 10px auto;
+  }
+
+  .screen {
+    width: 70vw;
+    height: 70vw;
+  }
+}
+@media screen and (max-width: 520px) {
+  .control {
+    border-radius: 0px;
+    background: none;
+    box-shadow: none;
+  }
+}
