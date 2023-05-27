@@ -58,11 +58,11 @@ $(document).ready(function () {
     //console.log( this.value );
     let choice = this.value;
     if (choice == 1) {
-      $(".title h1").text("Dijkstra Algorithm");
+      $(".title h2").text("Dijkstra Algorithm");
     } else if (choice == 2) {
-      $(".title h1").text("Breadth First Search");
+      $(".title h2").text("Breadth First Search");
     } else if (choice == 3) {
-      $(".title h1").text("Depth First Search");
+      $(".title h2").text("Depth First Search");
     }
     ALGORITHM = choice;
   });
