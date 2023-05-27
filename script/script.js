@@ -1,8 +1,7 @@
 //Importing Algorithm
-import {Dijkstra} from './dijkstra.js'
-import {BreadthFirstSearch} from './bfs.js'
-import {DepthFirstSearch} from './dfs.js'
-import {Astar} from './astar.js'
+import { Dijkstra } from './dijkstra.js'
+import { BreadthFirstSearch } from './bfs.js'
+import { DepthFirstSearch } from './dfs.js'
 
 $(document).ready(function () {
   //Set pevious State
@@ -55,19 +54,17 @@ $(document).ready(function () {
   });
 
   //cHOOSE aLGORITHm
-  $('select').on('change', function() {
-      //console.log( this.value );
-      let choice = this.value;
-      if (choice == 1) {
-        $(".title h1").text("Dijkstra Algorithm");
-      } else if (choice == 2) {
-        $(".title h1").text("Breadth First Search");
-      } else if (choice == 3) {
-        $(".title h1").text("Depth First Search");
-      } else {
-        $(".title h1").text("A* Algorithm");
-      }
-      ALGORITHM = choice;
+  $('select').on('change', function () {
+    //console.log( this.value );
+    let choice = this.value;
+    if (choice == 1) {
+      $(".title h1").text("Dijkstra Algorithm");
+    } else if (choice == 2) {
+      $(".title h1").text("Breadth First Search");
+    } else if (choice == 3) {
+      $(".title h1").text("Depth First Search");
+    }
+    ALGORITHM = choice;
   });
 
   //oNCLICK HAndle Visualization [[[[[[Start]]]]]]]
@@ -91,13 +88,11 @@ $(document).ready(function () {
   function decoder(algo) {
     SPEED = 6 - SPEED;
     if (algo == 1) {
-      Dijkstra(data,startid,endid,SPEED);
+      Dijkstra(data, startid, endid, SPEED);
     } else if (algo == 2) {
-      BreadthFirstSearch(data,startid,endid,SPEED);
+      BreadthFirstSearch(data, startid, endid, SPEED);
     } else if (algo == 3) {
-      DepthFirstSearch(data,startid,endid,SPEED);
-    } else {
-     Astar(data,startid,endid,SPEED);
+      DepthFirstSearch(data, startid, endid, SPEED);
     }
   }
 
@@ -192,9 +187,9 @@ $(document).ready(function () {
     for (let i = 0; i < size; i++) {
       for (let j = 0; j < size; j++) {
         //console.log(wall.indexOf(uniqueId))
-        if(wall.indexOf(uniqueId)==-1){
+        if (wall.indexOf(uniqueId) == -1) {
           data[i][j] = new Spot(i, j, false, uniqueId++);
-        }else{
+        } else {
           data[i][j] = new Spot(i, j, true, uniqueId++);
         }
       }
@@ -208,39 +203,37 @@ $(document).ready(function () {
     //console.log(data);
   }
 
-    //Function to make neighbors
-    function Spot(i,j,isWall,id){
-      this.i = i;
-      this.j = j;
-      this.id = id;
-      this.isWall = isWall;
-      this.neighbors = [];
-      this.path = [];
-      this.visited = false;
-      this.distance = Infinity;
-      this.heuristic = 0;
-      this.function = this.distance + this.heuristic;
-      this.source = "";
+  //Function to make neighbors
+  function Spot(i, j, isWall, id) {
+    this.i = i;
+    this.j = j;
+    this.id = id;
+    this.isWall = isWall;
+    this.neighbors = [];
+    this.path = [];
+    this.visited = false;
+    this.distance = Infinity;
+    this.heuristic = 0;
+    this.function = this.distance + this.heuristic;
+    this.source = "";
 
-      this.connectFrom = function(data){
-          var i = this.i;
-          var j = this.j;
-          if(i>0 && !(data[i-1][j].isWall)){
-              this.neighbors.push(data[i-1][j])
-          }
-          if(i<SIZE-1 && !(data[i+1][j].isWall)){
-              this.neighbors.push(data[i+1][j])
-          }
-          if(j>0 && !(data[i][j-1].isWall)){
-              this.neighbors.push(data[i][j-1])
-          }
-          if(j<SIZE-1 && !(data[i][j+1].isWall)){
-              this.neighbors.push(data[i][j+1])
-          }
+    this.connectFrom = function (data) {
+      var i = this.i;
+      var j = this.j;
+      if (i > 0 && !(data[i - 1][j].isWall)) {
+        this.neighbors.push(data[i - 1][j]);
       }
-
+      if (i < SIZE - 1 && !(data[i + 1][j].isWall)) {
+        this.neighbors.push(data[i + 1][j]);
+      }
+      if (j > 0 && !(data[i][j - 1].isWall)) {
+        this.neighbors.push(data[i][j - 1]);
+      }
+      if (j < SIZE - 1 && !(data[i][j + 1].isWall)) {
+        this.neighbors.push(data[i][j + 1]);
+      }
+    };
   }
-
 
   //Make bfs dfs work ===> visual animate and path animate
   //Scope for the dijistra and algorithm

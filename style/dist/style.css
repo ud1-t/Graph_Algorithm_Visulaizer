@@ -49,28 +49,39 @@ body {
 
 .animate {
   animation: appear 1.4s;
-  background-color: #f4fd9e;
+  background-color: #80CCE1;
 }
 
 @keyframes appear {
   0% {
-    opacity: 0.5;
+    opacity: 1;
     transform: scale(0);
     border-radius: 50%;
   }
-  30% {
+  25% {
+    opacity: 0.50;
+    background-color: #FFFF00;
+    border-radius: 50%;
+  }
+  50% {
+    opacity: 0.50;
+    background-color: #0077ff;
+    border-radius: 40%;
+  }
+  60% {
     opacity: 0.75;
-    background-color: #ffeb35;
+    background-color: #84D3BF;
+    border-radius: 30%;
   }
   100% {
     opacity: 1;
-    background-color: #00ff95;
+    background-color: #80CCE1;
     transform: scale(1);
     border-radius: 0px;
   }
 }
 .path {
-  background: #ff9393;
+  background: #ffff00;
 }
 
 .control {

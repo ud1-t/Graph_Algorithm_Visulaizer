@@ -2,7 +2,7 @@
 $theme1: #e0e0e0;
 $theme2: #ffffff;
 $fontsize: 18px;
-$wall: #016efd;
+$wall: #000000;
 
 //Neomorphism
 $lg1 : #f0f0f0;
@@ -46,11 +46,11 @@ body{
 }
 
 .target{
-    background:#262626;
+    background:#016efd;
 }
 
 .wall{
-    background:#016efd;
+    background:#000000;
 }
 
 .screen{
@@ -59,15 +59,35 @@ body{
 }
 
 .animate{
-    animation: appear 1s;
-    background-color: #f4fd9e;
+    animation: appear 1.4s;
+    background-color: #80CCE1;
 }
 
-@keyframes appear{
-    0%{opacity: 0.5;transform: scale(0); border-radius: 50%;}
-    30%{opacity: 0.75;background-color: #ffeb35; }
-    100%{opacity: 1;background-color: #00ff95;transform: scale(1); border-radius: 0px;}
-}
+@keyframes appear {
+    0% {
+      opacity: 0.30;
+      transform: scale(0);
+      border-radius: 50%;
+    }
+    25% {
+      opacity: 0.50;
+      background-color: #FFFF00;
+    }
+    50% {
+      opacity: 0.50;
+      background-color: #0077ff;
+    }
+    60% {
+      opacity: 0.75;
+      background-color: #84D3BF;
+    }
+    100% {
+      opacity: 1;
+      background-color: #80CCE1;
+      transform: scale(1);
+      border-radius: 0px;
+    }
+  }
 
 .path{
     background: #ff9393;
